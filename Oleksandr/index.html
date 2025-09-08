@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vårt Team</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Huvudnavigering -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Vårt Team</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Hem</a>
+                </li>
+                <li class="nav-item">
+                    <a href="om-oss.html" class="nav-link">Om Oss</a>
+                </li>
+                <li class="nav-item">
+                    <a href="medlemmar.html" class="nav-link">Medlemmar</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Hero-sektion -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Välkommen till Vårt Team</h1>
+                <p>Vi är en  grupp som arbetar tillsammans för att skapa fantastisk en webbsida</p>
+                <a href="om-oss.html" class="btn btn-primary">Läs mer om oss</a>
+            </div>
+        </section>
+
+        <!-- Om teamet kort -->
+        <section class="about-preview">
+            <div class="container">
+                <h2>Vad vi gör</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>Innovation</h3>
+                        <p>Vi strävar efter att hitta kreativa lösningar på komplexa problem</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Samarbete</h3>
+                        <p>Tillsammans är vi starkare och kan åstadkomma mer</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Kvalitet</h3>
+                        <p>Vi levererar alltid högkvalitativa resultat</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Team 4. Alla rättigheter förbehållna.</p>
+            <div class="footer-links">
+                <a href="kontakt.html">Kontakta oss</a>
+                <a href="om-oss.html">Om oss</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript för mobilnavigering -->
+    <script>
+        // Hamburger-meny funktionalitet
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Stäng menyn när man klickar på en länk
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+    </script>
+</body>
+</html>
