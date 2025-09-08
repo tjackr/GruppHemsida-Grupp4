@@ -1,0 +1,188 @@
+/* ===== Base & Resets ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000000;
+  color: #ffffff;
+  line-height: 1.50;
+}
+
+/* ===== Sidebar Nav ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background: #000000;
+  padding: 28px 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 16px;
+}
+
+.sidebar li { margin: 6px 0; }
+
+.sidebar a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  background: #161616;
+  border-left-color: #f7f7f7;
+  outline: none;
+}
+
+.sidebar a.active {
+  background: #000000;
+  border-left-color: #ffffff;
+}
+
+/* ===== Main Content Wrapper ===== */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+/* ===== Headings ===== */
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+h2 {
+  color: #ffffff;
+  text-align: left;
+  margin: 0 0 12px;
+}
+
+h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+/* ===== Section Card ===== */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #161616;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Inner Content Row (default) ===== */
+.container-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.5;
+}
+
+.container-content > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* ===== Hobbies Section Fix (text left, image right) ===== */
+#hobbies .container-content {
+  flex-direction: row;      /* always side-by-side */
+  align-items: flex-start;
+}
+
+#hobbies .image-col {
+  flex: 0 0 auto;           /* don’t stretch like text */
+  max-width: 300px;         /* cap image column */
+}
+
+.hobby-img {
+  display: block;
+  width: 100%;              /* responsive inside column */
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #161616;
+}
+
+/* ===== General Lists ===== */
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* ===== Resume List ===== */
+.resume {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.resume li {
+  margin: 6px 0;
+  line-height: 1.25;
+}
+
+.resume .company {
+  display: block;
+  line-height: 1.2;
+  margin-top: 2px;
+  margin-left: 20px;
+  color: #adabab;
+  font-size: 0.95em;
+}
+
+/* ===== Responsive: Small Screens ===== */
+@media (max-width: 700px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  .sidebar a {
+    border-left: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  /* Let image shrink further on small screens */
+  #hobbies .image-col {
+    max-width: 200px;
+  }
+}
